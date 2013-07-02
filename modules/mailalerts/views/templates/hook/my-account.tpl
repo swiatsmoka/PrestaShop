@@ -25,7 +25,7 @@
 
 <li class="mailalerts">
 	<a href="{$link->getModuleLink('mailalerts', 'account')|escape:'html'}" title="{l s='My alerts' mod='mailalerts'}" rel="nofollow">
-		<img src="{$module_template_dir}img/icon-alert.png" class="icon" />
-		{l s='My alerts' mod='mailalerts'}
+		{if !$in_footer}<img {if isset($mobile_hook)}src="{$module_template_dir}img/icon-alert.png" class="ui-li-icon ui-li-thumb"{else}src="{$module_template_dir}img/icon-alert.png" class="icon"{/if} alt="{l s='My alerts' mod='mailalerts'}"/>{/if}
+				{l s='My alerts' mod='mailalerts'}
 	</a>
 </li>
