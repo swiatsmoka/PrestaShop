@@ -478,12 +478,14 @@ class MailAlerts extends Module
 
 	public function hookDisplayCustomerAccount($params)
 	{
-		return $this->_customer_qty ? $this->display(__FILE__, 'my-account.tpl') : null;
+		$this->smarty->assign('in_footer', false);
+		return $this->display(__FILE__, 'my-account.tpl');
 	}
 
 	public function hookDisplayMyAccountBlock($params)
 	{
-		return $this->hookDisplayCustomerAccount($params);
+	$this->smarty->assign('in_footer', false);
+		return $this->display(__FILE__, 'my-account.tpl');
 	}
 
 	public function hookActionProductDelete($params)
